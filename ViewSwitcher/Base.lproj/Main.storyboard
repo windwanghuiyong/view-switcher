@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Switching View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SwitchingViewController" customModule="ViewSwitcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I01-I5-DZj">
+                                <items>
+                                    <barButtonItem title="Switch Views" id="2aN-xO-k3a" userLabel="Switch Views">
+                                        <connections>
+                                            <action selector="switchViewsWithSender:" destination="BYZ-38-t0r" id="Pbf-fZ-fyY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I01-I5-DZj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Ny-h5-zNm"/>
+                            <constraint firstAttribute="trailing" secondItem="I01-I5-DZj" secondAttribute="trailing" id="aWT-6l-F9N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I01-I5-DZj" secondAttribute="bottom" id="cii-90-U8g"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="t7e-gf-81S">
+            <objects>
+                <viewController storyboardIdentifier="Blue" id="yR3-mu-fWr" customClass="BlueViewController" customModule="ViewSwitcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mg-7M-7Tv"/>
+                        <viewControllerLayoutGuide type="bottom" id="9gI-sd-OZx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LnK-lF-chB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idC-Es-hRW">
+                                <state key="normal" title="Press Me">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueButtonPressedWithSender:" destination="yR3-mu-fWr" eventType="touchUpInside" id="PvO-dn-gTv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="idC-Es-hRW" firstAttribute="centerY" secondItem="LnK-lF-chB" secondAttribute="centerY" id="CEt-Ty-RUb"/>
+                            <constraint firstItem="idC-Es-hRW" firstAttribute="centerX" secondItem="LnK-lF-chB" secondAttribute="centerX" id="w0L-GO-OYL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYh-uV-T9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="139"/>
+        </scene>
+        <!--Yellow View Controller-->
+        <scene sceneID="K1d-f3-uEn">
+            <objects>
+                <viewController storyboardIdentifier="Yellow" id="sGm-lg-pIS" customClass="YellowViewController" customModule="ViewSwitcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UpQ-tP-d7x"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lvx-Lq-Opi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MS2-9B-jz0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30B-8w-4FG">
+                                <state key="normal" title="Press Me, Too"/>
+                                <connections>
+                                    <action selector="yellowButtonPressedWithSender:" destination="sGm-lg-pIS" eventType="touchUpInside" id="AjZ-95-fjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="30B-8w-4FG" firstAttribute="centerX" secondItem="MS2-9B-jz0" secondAttribute="centerX" id="7vj-Um-bIk"/>
+                            <constraint firstItem="30B-8w-4FG" firstAttribute="centerY" secondItem="MS2-9B-jz0" secondAttribute="centerY" id="ehK-xe-gDJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3x-XZ-uR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="139"/>
         </scene>
     </scenes>
 </document>
